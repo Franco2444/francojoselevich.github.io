@@ -27,7 +27,7 @@ const expertise = [
 ];
 
 const achievements = [
-  "Designed and operated centralized access management for 450+ AWS accounts using IAM Identity Center, integrating Google Workspace as IdP to serve thousands of users across Brazil, Argentina, Mexico[...]
+  "Designed and operated centralized access management for 450+ AWS accounts using IAM Identity Center, integrating Google Workspace as IdP to serve thousands of users across Brazil, Argentina, Mexico, and Colombia.",
   "Implemented least-privilege IAM policies (JSON) and automated provisioning workflows, reducing manual overhead while maintaining strict compliance requirements in fintech environments.",
   "Built security controls into cloud infrastructure and deployment pipelines, working cross-functionally with DevOps and application teams to embed security early in the development lifecycle.",
 ];
@@ -37,7 +37,7 @@ const projects = [
     title: "IAM Policy Analyzer",
     subtitle: "Automated IAM security analysis at scale",
     description:
-      "Serverless tool that analyzes AWS IAM policies daily across multiple accounts via AWS Organizations. Detects over-permissioned policies, dangerous wildcards (Action:*, s3:*), privilege esca[...]
+      "Serverless tool that analyzes AWS IAM policies daily across multiple accounts via AWS Organizations. Detects over-permissioned policies, dangerous wildcards (Action:*, s3:*), privilege escalation paths, and generates automated security reports via SNS.",
     tags: ["Python", "AWS Lambda", "EventBridge", "S3", "SNS", "IAM", "CloudFormation", "StackSets", "GitHub Actions"],
     github: "https://github.com/francojoselevich/iam-policy-analyzer",
     highlights: [
@@ -51,7 +51,7 @@ const projects = [
     title: "AWS Observability Infrastructure",
     subtitle: "Modular Terraform IaC for production-like environments",
     description:
-      "End-to-end AWS infrastructure built with Terraform following production best practices. Includes a full observability stack (Prometheus + Grafana on Docker), access via AWS SSM instead of S[...]
+      "End-to-end AWS infrastructure built with Terraform following production best practices. Includes a full observability stack (Prometheus + Grafana on Docker), access via AWS SSM instead of SSH, and remote state management with S3 + DynamoDB locking.",
     tags: ["Terraform", "AWS EC2", "IAM", "SSM", "Docker", "Prometheus", "Grafana", "S3", "DynamoDB"],
     github: null,
     highlights: [
@@ -244,7 +244,7 @@ const skills = [
               {project.github && (
                 <a href={project.github} target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.[...]
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                   </svg>
                   GitHub
                 </a>
@@ -307,7 +307,7 @@ const skills = [
           </a>
           <a href="https://github.com/francojoselevich" target="_blank" rel="noopener" class="contact-item">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.4[...]
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
             github.com/francojoselevich
           </a>
