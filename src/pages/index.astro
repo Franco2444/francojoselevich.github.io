@@ -1,0 +1,887 @@
+---
+const expertise = [
+  {
+    title: "Cloud Security Architecture",
+    description: "Multi-account AWS design, blast radius reduction, security hardening, and compliance posture strengthening.",
+  },
+  {
+    title: "IAM & Identity Governance",
+    description: "AWS IAM Identity Center (SSO), federated authentication (SAML/OIDC), custom JSON policies, least-privilege enforcement.",
+  },
+  {
+    title: "DevSecOps & CI/CD Security",
+    description: "Pipeline security controls, SAST/DAST integration, secrets management, container security, policy-as-code.",
+  },
+  {
+    title: "Cloud Governance",
+    description: "AWS Organizations, SCPs, permission boundaries, CloudTrail auditing, KMS encryption, secure data lake governance.",
+  },
+  {
+    title: "Monitoring & Incident Response",
+    description: "CloudWatch, Datadog, Dynatrace, GuardDuty, Security Hub, and centralized logging strategies.",
+  },
+  {
+    title: "Automation & IaC",
+    description: "Terraform, n8n workflows, Python/Bash scripting, and infrastructure security automation.",
+  },
+];
+
+const achievements = [
+  "Designed and operated centralized access management for 450+ AWS accounts using IAM Identity Center, integrating Google Workspace as IdP to serve thousands of users across Brazil, Argentina, Mexico, and Colombia.",
+  "Implemented least-privilege IAM policies (JSON) and automated provisioning workflows, reducing manual overhead while maintaining strict compliance requirements in fintech environments.",
+  "Built security controls into cloud infrastructure and deployment pipelines, working cross-functionally with DevOps and application teams to embed security early in the development lifecycle.",
+];
+
+const projects = [
+  {
+    title: "IAM Policy Analyzer",
+    subtitle: "Automated IAM security analysis at scale",
+    description:
+      "Serverless tool that analyzes AWS IAM policies daily across multiple accounts via AWS Organizations. Detects over-permissioned policies, dangerous wildcards (Action:*, s3:*), privilege escalation paths (iam:AttachUserPolicy, sts:AssumeRole), and NotAction misuse. Sends email alerts via SNS for critical findings and stores historical JSON reports in S3.",
+    tags: ["Python", "AWS Lambda", "EventBridge", "S3", "SNS", "IAM", "CloudFormation", "StackSets", "GitHub Actions"],
+    github: "https://github.com/Franco2444/iam-policy-analyzer",
+    highlights: [
+      "Multi-account support via cross-account IAM role assumption",
+      "Automated daily execution with EventBridge",
+      "20+ unit tests + CI/CD integration via exit codes",
+      "~$0.10/month operating cost for 50 accounts",
+    ],
+  },
+  {
+    title: "AWS Observability Infrastructure",
+    subtitle: "Modular Terraform IaC for production-like environments",
+    description:
+      "End-to-end AWS infrastructure built with Terraform following production best practices. Includes a full observability stack (Prometheus + Grafana on Docker), access via AWS SSM instead of SSH to minimize attack surface, modular architecture separating IAM, networking and compute, and remote state management with S3 + DynamoDB locking.",
+    tags: ["Terraform", "AWS EC2", "IAM", "SSM", "Docker", "Prometheus", "Grafana", "S3", "DynamoDB"],
+    github: null,
+    highlights: [
+      "Zero SSH exposure — access exclusively via AWS SSM",
+      "Remote state on S3 with DynamoDB locking for team safety",
+      "Modular refactor using moved blocks (no resource recreation)",
+      "Bootstrap automation via user_data scripts",
+    ],
+  },
+];
+
+const experience = [
+  {
+    company: "Simetrik",
+    role: "Cloud Security Engineer",
+    highlights: [
+      "Managed AWS IAM policies, SCPs, and permission boundaries for 500+ users across 30+ cloud and SaaS applications (AWS, GCP, Snowflake, Google Workspace, GitHub)",
+      "Designed and automated IAM provisioning workflows with n8n, integrating Zendesk and Slack — reducing manual effort and improving audit traceability",
+      "Supported access and security audit processes: structured access reviews, evidence collection, control validation, and compliance reporting",
+      "Collaborated with infrastructure and application teams to align access controls with cloud security best practices",
+    ],
+  },
+  {
+    company: "Swiss Medical",
+    roles: ["IAM Engineer", "Cloud & Infrastructure Engineer"],
+    promoted: true,
+    highlights: [
+      "Promoted to IAM Engineer — managed full identity lifecycle for thousands of users across on-prem and cloud environments using least-privilege and Zero Trust principles",
+      "Designed and maintained RBAC models through Active Directory with hybrid cloud synchronization and AWS IAM",
+      "Developed AWS Lambda functions to automate identity and access provisioning processes",
+      "Implemented MFA organization-wide and managed secrets with AWS Secrets Manager",
+      "Participated in access and security audits: evidence collection, access reviews, and control validation across systems and platforms",
+      "24/7 monitoring of cloud and on-prem infrastructure (Linux/Windows servers, AWS) using Dynatrace, Datadog, Nagios, and CloudWatch",
+    ],
+  },
+];
+
+const skills = [
+  {
+    title: "Cloud Platforms",
+    subgroups: [
+      { label: "AWS (Primary)", items: ["Organizations & SCPs", "IAM Identity Center", "Permission Boundaries", "Security Hub", "GuardDuty", "CloudTrail", "KMS", "CloudWatch", "VPC & Networking"] },
+      { label: "Other", items: ["GCP", "Azure / Entra ID"] },
+    ],
+  },
+  {
+    title: "IAM & Security",
+    subgroups: [
+      { label: null, items: ["IAM Identity Center", "Zero Trust Architecture", "SAML / OIDC", "Identity Governance", "Incident Response", "VPN"] },
+    ],
+  },
+  {
+    title: "DevSecOps",
+    subgroups: [
+      { label: null, items: ["CI/CD Security Controls", "Secrets Management", "Container Security", "Policy-as-Code", "SAST / DAST"] },
+    ],
+  },
+  {
+    title: "Infrastructure & Automation",
+    subgroups: [
+      { label: null, items: ["Terraform", "Docker", "n8n", "Python", "Bash"] },
+    ],
+  },
+  {
+    title: "Observability & Monitoring",
+    subgroups: [
+      { label: null, items: ["Datadog", "Dynatrace", "Grafana", "CloudWatch"] },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Franco Joselevich — Cloud Security Engineer specialized in AWS IAM, DevSecOps, and multi-account cloud security." />
+    <title>Franco Joselevich · Cloud Security Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <span class="nav-name">Franco Joselevich</span>
+      <div class="nav-links">
+        <a href="https://linkedin.com/in/franco-joselevich" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Franco2444" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:joselevich2@gmail.com">Email</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-badge">Open to new opportunities</div>
+        <h1>Franco Joselevich</h1>
+        <p class="hero-title">Cloud Security Engineer</p>
+        <p class="hero-bio">
+          Specialized in cloud security, IAM, and DevSecOps. Experienced managing secure
+          multi-account AWS environments (450+ accounts), implementing CI/CD security controls,
+          and building security-by-design in cloud-native architectures.
+        </p>
+        <div class="hero-meta">
+          <span>📍 Buenos Aires, Argentina</span>
+          <span>·</span>
+          <span>Fintech background · PCI-DSS awareness</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://linkedin.com/in/franco-joselevich" target="_blank" rel="noopener" class="btn btn-primary">
+            Connect on LinkedIn
+          </a>
+          <a href="https://github.com/Franco2444" target="_blank" rel="noopener" class="btn btn-secondary">
+            View GitHub
+          </a>
+        </div>
+      </section>
+
+      <!-- Core Expertise -->
+      <section class="expertise">
+        <h2 class="section-title">Core Expertise</h2>
+        <div class="expertise-grid">
+          {expertise.map((item) => (
+            <div class="expertise-card">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="experience">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-list">
+          {experience.map((job) => (
+            <div class="exp-card">
+              <div class="exp-header">
+                <div class="exp-title-group">
+                  <span class="exp-company">{job.company}</span>
+                  {'roles' in job ? (
+                    <div class="exp-roles">
+                      {job.roles.map((r: string, i: number) => (
+                        <span class={`exp-role ${i === 0 ? 'exp-role-current' : ''}`}>{r}</span>
+                      ))}
+                    </div>
+                  ) : (
+                    <span class="exp-role">{(job as any).role}</span>
+                  )}
+                </div>
+                {job.promoted && <span class="exp-promoted-badge">Promoted</span>}
+              </div>
+              <ul class="exp-highlights">
+                {job.highlights.map((h) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Key Achievements -->
+      <section class="achievements">
+        <h2 class="section-title">Key Achievements</h2>
+        <div class="achievements-list">
+          {achievements.map((item) => (
+            <div class="achievement-item">
+              <span class="achievement-arrow">→</span>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="projects">
+        <h2 class="section-title">Projects</h2>
+        {projects.map((project) => (
+          <article class="project-card">
+            <div class="project-header">
+              <div>
+                <h3>{project.title}</h3>
+                <p class="project-subtitle">{project.subtitle}</p>
+              </div>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noopener" class="github-link" aria-label="View on GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                  GitHub
+                </a>
+              )}
+            </div>
+
+            <p class="project-description">{project.description}</p>
+
+            <ul class="project-highlights">
+              {project.highlights.map((h) => (
+                <li>{h}</li>
+              ))}
+            </ul>
+
+            <div class="project-tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <!-- Skills -->
+      <section class="skills">
+        <h2 class="section-title">Technical Stack</h2>
+        <div class="skills-grid">
+          {skills.map((group) => (
+            <div class="skill-group">
+              <h3 class="skill-group-title">{group.title}</h3>
+              {group.subgroups.map((sub) => (
+                <div class="skill-subgroup">
+                  {sub.label && <span class="skill-subgroup-label">{sub.label}</span>}
+                  <div class="skill-tags">
+                    {sub.items.map((s) => <span class="skill-tag">{s}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact">
+        <h2>Let's talk</h2>
+        <p>Open to Cloud Security, DevSecOps, and Platform Security roles.</p>
+        <div class="contact-links">
+          <a href="mailto:joselevich2@gmail.com" class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            joselevich2@gmail.com
+          </a>
+          <a href="https://linkedin.com/in/franco-joselevich" target="_blank" rel="noopener" class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+            linkedin.com/in/franco-joselevich
+          </a>
+          <a href="https://github.com/Franco2444" target="_blank" rel="noopener" class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            github.com/francojoselevich
+          </a>
+          <span class="contact-item contact-location">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Buenos Aires, Argentina
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Franco Joselevich · Cloud Security Engineer · Buenos Aires, Argentina</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --bg: #0c0c0c;
+    --bg-card: #141414;
+    --bg-card-hover: #1c1c1c;
+    --border: #282828;
+    --accent: #38bdf8;
+    --accent-light: #7dd3fc;
+    --green: #8fba68;
+    --text: #ededed;
+    --text-muted: #8a8a8a;
+    --text-dim: #4d4d4d;
+    --font: 'Inter', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(12, 12, 12, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* Layout */
+  main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  .section-title {
+    font-size: 0.7rem;
+    font-family: var(--mono);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 5rem 0 4.5rem;
+    text-align: center;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #ededed;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.05rem;
+    font-family: var(--mono);
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-bio {
+    max-width: 620px;
+    margin: 0 auto 1rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary { background: var(--accent); color: #0c0c0c; }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+  /* Expertise */
+  .expertise {
+    margin-bottom: 4rem;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .expertise-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.4rem;
+    transition: border-color 0.2s;
+  }
+
+  .expertise-card:hover {
+    border-color: rgba(56, 189, 248, 0.25);
+  }
+
+  .expertise-card h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #ededed;
+    margin-bottom: 0.5rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* Experience */
+  .experience { margin-bottom: 4rem; }
+
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .exp-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    transition: border-color 0.2s;
+  }
+
+  .exp-card:hover { border-color: rgba(56, 189, 248, 0.2); }
+
+  .exp-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .exp-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .exp-company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ededed;
+  }
+
+  .exp-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .exp-role {
+    font-size: 0.78rem;
+    font-family: var(--mono);
+    color: var(--text-dim);
+  }
+
+  .exp-role-current {
+    color: var(--accent);
+  }
+
+  .exp-promoted-badge {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    font-family: var(--mono);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+  }
+
+  .exp-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .exp-highlights li {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .exp-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  /* Achievements */
+  .achievements {
+    margin-bottom: 4rem;
+  }
+
+  .achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .achievement-item {
+    display: flex;
+    gap: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 1rem 1.25rem;
+  }
+
+  .achievement-arrow {
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .achievement-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* Projects */
+  .projects { margin-bottom: 4rem; }
+
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    background: var(--bg-card-hover);
+  }
+
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ededed;
+    margin-bottom: 0.2rem;
+  }
+
+  .project-subtitle {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+
+  .github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .github-link:hover { color: var(--accent); border-color: var(--accent); }
+
+  .project-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-highlights {
+    list-style: none;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .project-highlights li {
+    font-size: 0.855rem;
+    color: var(--text-muted);
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .project-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 0.18rem 0.55rem;
+    border-radius: 4px;
+  }
+
+  /* Skills */
+  .skills { margin-bottom: 4rem; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.4rem;
+    transition: border-color 0.2s;
+  }
+
+  .skill-group:hover { border-color: rgba(56, 189, 248, 0.2); }
+
+  .skill-group-title {
+    font-size: 0.75rem;
+    font-family: var(--mono);
+    font-weight: 500;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.875rem;
+  }
+
+  .skill-subgroup { margin-bottom: 0.6rem; }
+
+  .skill-subgroup-label {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .skill-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 0.18rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  /* Contact */
+  .contact {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ededed;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  .contact > p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-family: var(--mono);
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    transition: all 0.2s;
+  }
+
+  .contact-item:not(.contact-location):hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .contact-location {
+    cursor: default;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    font-family: var(--mono);
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0.875rem 1rem; }
+    .nav-links { gap: 1rem; }
+    .project-header { flex-direction: column; }
+    .github-link { align-self: flex-start; }
+    .hero-meta { flex-direction: column; gap: 0.25rem; }
+    .hero-meta span:nth-child(2) { display: none; }
+  }
+</style>
